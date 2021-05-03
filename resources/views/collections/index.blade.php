@@ -17,7 +17,7 @@
 		<h1 class="top_title"><a href="{{ action('CollectionsController@index') }}); ?>"><img src="/img/logo.svg" alt="sangai logo"></a></h1>
 		<nav class="global_nav">
 			<ul class="nav_list">
-				<li class="nav_list_content"><a href="" class="a_default">ABOUT</a></li>
+				<li class="nav_list_content"><a href="{{ action('PagesController@about') }}" class="a_default">ABOUT</a></li>
 				<li class="nav_list_content"><a href="" class="a_default">NEWS</a></li>
 				<li class="nav_list_content"><a href="" class="a_default">COLLECTION</a></li>
 				<li class="nav_list_content"><a href="" class="a_default">BRIDAL</a></li>
