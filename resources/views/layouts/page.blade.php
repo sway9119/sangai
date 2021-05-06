@@ -14,15 +14,15 @@
 <body>
 	<div id="wrapper">
         <header>
-            <h1 class="top_title"><a href=""><img src="/img/logo.svg" alt="sangai logo"></a></h1>
+            <h1 class="top_title"><a href="/"><img src="/img/logo.svg" alt="sangai logo"></a></h1>
             <nav class="global_nav">
                 <ul class="nav_list">
-                    <li class="nav_list_content"><a href="" class="a_default">ABOUT</a></li>
-                    <li class="nav_list_content"><a href="" class="a_default">NEWS</a></li>
-                    <li class="nav_list_content"><a href="" class="a_default">COLLECTION</a></li>
-                    <li class="nav_list_content"><a href="" class="a_default">BRIDAL</a></li>
-                    <li class="nav_list_content"><a href="" class="a_default">SHOP</a></li>
-                    <li class="nav_list_content"><a href="" class="a_default">CONTACT</a></li>
+                    <li class="nav_list_content"><a href="/about" class="a_default">ABOUT</a></li>
+                    <li class="nav_list_content"><a href="/news" class="a_default">NEWS</a></li>
+                    <li class="nav_list_content"><a href="/collection" class="a_default">COLLECTION</a></li>
+                    <li class="nav_list_content"><a href="/bridal" class="a_default">BRIDAL</a></li>
+                    <li class="nav_list_content"><a href="/shop" class="a_default">SHOP</a></li>
+                    <li class="nav_list_content"><a href="/contact" class="a_default">CONTACT</a></li>
                 </ul>
             </nav>
             <button id="menu">MENU</button>
