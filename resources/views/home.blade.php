@@ -18,6 +18,16 @@
                 </div>
             </div>
         </div>
+        <div class="col-md-8">
+            <div class="card">
+                <a href="/about/add" class="a_default">ABOUT</a>
+                <a href="/admin/news_list" class="a_default">NEWS</a>
+                <a href="/collection/add" class="a_default">COLLECTION</a>
+                <a href="/bridal/add" class="a_default">BRIDAL</a>
+                <a href="/shop/add" class="a_default">SHOP</a>
+                <a href="/contact/add" class="a_default">CONTACT</a>
+            </div>
+        </div>
     </div>
 </div>
 @endsection

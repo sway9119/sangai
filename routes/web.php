@@ -22,7 +22,10 @@ Route::group(['middleware' => ['auth.admin']], function () {
 	Route::get('/admin', 'App\Http\Controllers\admin\AdminTopController@show');
 	//ログアウト実行
 	Route::post('/admin/logout', 'App\Http\Controllers\admin\AdminLogoutController@logout');
-
+    //News一覧
+	Route::get('/admin/news_list', 'App\Http\Controllers\admin\ManageNewsController@showNewsList');
+	//News詳細
+	Route::get('/admin/news/{id}', 'App\Http\Controllers\admin\ManageNewsController@showNewsDetail');
 });
 
 //管理側ログイン
