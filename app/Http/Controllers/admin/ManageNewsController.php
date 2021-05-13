@@ -2,7 +2,8 @@
 namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\News;
+use App\Models\News;
+
 class ManageNewsController extends Controller
 {
 	function showNewsList(){
@@ -18,7 +19,7 @@ class ManageNewsController extends Controller
 		]);
 	}
 
-    function addNewsDetail(){
+    function addNews(){
 		$news = News::find($id);
 		return view("admin.news_detail", [
 			"news" => $news

@@ -17,9 +17,11 @@ class NewsTableSeeder extends Seeder
         $param = [
             'title' => 'テストタイトル1です',
             'message' => 'テストメッセージですテストメッセージですテストメッセージですテストメッセージですテストメッセージです',
-            'img' => "",
+            'img' => '',
             'create_user' => 1,
-            'update_user' => ""
+            'update_user' => 1,
+            'created_at' => '2020/1/1',
+            'updated_at' => '2020/1/1'
         ];
         DB::table('news')->insert($param);
 
@@ -28,7 +30,9 @@ class NewsTableSeeder extends Seeder
             'message' => 'テストメッセージですテストメッセージですテストメッセージですテストメッセージですテストメッセージです',
             'img' => "",
             'create_user' => 1,
-            'update_user' => ""
+            'update_user' => 2,
+            'created_at' => '2020/1/2',
+            'updated_at' => '2020/1/2'
         ];
         DB::table('news')->insert($param);
 
