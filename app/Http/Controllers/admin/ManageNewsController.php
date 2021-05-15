@@ -18,11 +18,17 @@ class ManageNewsController extends Controller
 			"news" => $news
 		]);
 	}
-
     function addNews(){
 		$news = News::find($id);
-		return view("admin.news_detail", [
+		return view("admin.news_add", [
 			"news" => $news
+		]);
+	}
+	function deleteNews($id){
+		News::where('id', $id)->delete();
+		$news_list = News::orderBy("id", "desc")->paginate(10);
+		return view("admin.news_list", [
+			"news_list" => $news_list
 		]);
 	}
 }
