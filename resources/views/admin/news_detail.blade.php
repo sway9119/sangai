@@ -11,8 +11,8 @@
 			<ul class="list-group">
 				<li class="list-group-item">名前: {{ $news->title }}</li>
 				<li class="list-group-item">内容: {{ $news->message }}</li>
-				<li class="list-group-item">作成日: {{ $news->created_at->format('Y/m/d H:i:s') }}</li>
-				<li class="list-group-item">更新日: {{ $news->updated_at->format('Y/m/d H:i:s') }}</li>
+				<li class="list-group-item">作成日: {{ optional($news->created_at)->format('Y/m/d') ?: '' }}</li>
+				<li class="list-group-item">更新日: {{ optional($news->updated_at)->format('Y/m/d') ?: '' }}</li>
 			</ul>
 		</div>
 	</div>
