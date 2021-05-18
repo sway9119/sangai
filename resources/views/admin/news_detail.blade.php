@@ -1,20 +1,29 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-	<div class="card">
-		<div class="card-header">
-			<a href="{{ url('admin/news_list') }}">News一覧</a> &gt; News詳細
-		</div>
-		<div class="card-body">
-
-			<ul class="list-group">
-				<li class="list-group-item">名前: {{ $news->title }}</li>
-				<li class="list-group-item">内容: {{ $news->message }}</li>
-				<li class="list-group-item">作成日: {{ optional($news->created_at)->format('Y/m/d') ?: '' }}</li>
-				<li class="list-group-item">更新日: {{ optional($news->updated_at)->format('Y/m/d') ?: '' }}</li>
-			</ul>
+<form method="post" action="{{ route('news_update') }}">
+	<div class="container">
+		<div class="card">
+			<div class="card-header">
+				<div class="card mb-3">
+					<div class="row g-0">
+						<div class="col-md-8">
+							<div class="card-body">
+								<h5><input class="col-md-12" name="title" placeholder="タイトル" value="{{ $news->title }}"></input></h5>
+								<textarea class="col-md-12" rows=4" cols="40" name="content" placeholder="内容" >{{ $news->content }}</textarea>
+								<p class="card-text"><small class="text-muted">created at {{ optional($news->created_at)->format('Y/m/d') ?: '' }}</small></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<img src="https://i.gyazo.com/bbb9e098f91f362fbbf490719ed91d5b.jpg" alt="...">
+						</div>
+					</div>
+				</div>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-primary">完了</button>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</form>
 @endsection

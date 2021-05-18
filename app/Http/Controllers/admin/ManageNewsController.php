@@ -18,6 +18,12 @@ class ManageNewsController extends Controller
 			"news" => $news
 		]);
 	}
+	function editNewsDetail($id){
+		$news = News::find($id);
+		return view("admin.news_edit", [
+			"news" => $news
+		]);
+	}
     function addNews(){
 		$news = News::find($id);
 		return view("admin.news_add", [
