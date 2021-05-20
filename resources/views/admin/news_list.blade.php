@@ -5,7 +5,6 @@
 	<div class="card">
 		<div class="card-header">News一覧</div>
 		<div class="card-body">
-
 			<ul class="list-group">
 				@foreach ($news_list as $new)
 				<li class="list-group-item">
@@ -18,11 +17,9 @@
 				</li>
 				@endforeach
 			</ul>
-			
 			<div class="mt-3">
 				{{ $news_list->links() }}
 			</div>
-			
 		</div>
 	</div>
 </div>

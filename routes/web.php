@@ -25,10 +25,11 @@ Route::group(['middleware' => ['auth.admin']], function () {
     //News一覧
 	Route::get('/admin/news_list', 'App\Http\Controllers\admin\ManageNewsController@showNewsList');
 	//News詳細
-	Route::get('/admin/news/{id}', 'App\Http\Controllers\admin\ManageNewsController@showNewsDetail');
+	Route::get('/admin/news/{id}', 'App\Http\Controllers\admin\ManageNewsController@showNewsDetail')->name('news_detail');
 	//News編集
-	Route::post('/admin/news_update', 'App\Http\Controllers\admin\ManageNewsController@updateNewsDetail')->name('news_update');
-
+	Route::get('/admin/news_edit/{id}', 'App\Http\Controllers\admin\ManageNewsController@editNewsDetail');
+	//News更新
+	Route::post('/admin/news_update/{id}', 'App\Http\Controllers\admin\ManageNewsController@updateNewsDetail')->name('news_update');
 	//News削除
 	Route::get('/admin/news_delete/{id}', 'App\Http\Controllers\admin\ManageNewsController@deleteNews');
 

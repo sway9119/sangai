@@ -1,36 +1,40 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container">
-	<div class="card">
-		<div class="card-header">
-			<a href="{{ url('admin/news_list') }}">News一覧</a><a href="{{ url('admin/news_detail') }}">&gt; News詳細</a>&gt; News編集
-			<div class="text-right">
-			</div>
-		</div>
-		<div class="card-body">
-			<ul class="list-group">
+@if (count($errors) > 0)
+<div>
+	<ul>
+		@foreach ($errors->all() as $error)
+			<li>{{ $error }}</li>
+		@endforeach
+	</li>
+</div>
+@endif
+<form method="post" action="/admin/news_update/{{ $news->id }}">
+	@csrf
+	<div class="container">
+		<div class="card">
+			<div class="card-header">
 				<div class="card mb-3">
 					<div class="row g-0">
-                        <form action='{{ route('news_edit') }}' method='post'>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $news->title }}</h5>
-                                    <p class="card-text">{{ $news->message }}</p>
-                                    <p class="card-text"><small class="text-muted">created at {{ optional($news->created_at)->format('Y/m/d') ?: '' }}</small></p>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <img src="https://i.gyazo.com/bbb9e098f91f362fbbf490719ed91d5b.jpg" alt="...">
-                            </div>
-                            <div class="card-footer">
-
-                            </div>
-                        </form>
+						<div class="col-md-8">
+							<div class="card-body">
+								<imput type="hidden" name="id" value="{{$news->id}}">
+								<h5><input class="col-md-12" name="title" placeholder="タイトル" value="{{ $news->title }}"></h5>
+								<textarea class="col-md-12" rows=4" cols="40" name="message" placeholder="内容" >{{ $news->message }}</textarea>
+								<p class="card-text"><small class="text-muted">created at {{ optional($news->created_at)->format('Y/m/d') ?: '' }}</small></p>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<img src="https://i.gyazo.com/bbb9e098f91f362fbbf490719ed91d5b.jpg" alt="...">
+						</div>
 					</div>
 				</div>
-			</ul>
+				<div class="card-footer">
+					<button type="submit" class="btn btn-primary">完了</button>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</form>
 @endsection
