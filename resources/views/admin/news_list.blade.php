@@ -22,6 +22,7 @@
 				{{ $news_list->links() }}
 			</div>
 		</div>
+		<a href="{{ url('admin/news_add/') }}" class="btn btn-primary">新規作成</a>
 	</div>
 </div>
 @endsection​

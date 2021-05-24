@@ -28,10 +28,14 @@ class ManageNewsController extends Controller
 		return redirect()->route('news_detail', ['id' => $news->id, 'news' => $news])->with('status', '編集が完了しました。');
 	}
     function addNews(){
-		$news = News::find($id);
-		return view("admin.news_add", [
-			"news" => $news
-		]);
+		return view("admin.news_add");
+	}
+	function createNews(Request $request){
+		$news = new News;
+		$form = $request->all();
+		unset($form['_token']);
+		$news->fill($form)->save();
+		return redirect('/home');
 	}
 	function deleteNews($id){
 		News::where('id', $id)->delete();
