@@ -3,6 +3,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\News;
+use Illuminate\Support\Facades\Auth;
 
 class ManageNewsController extends Controller
 {
@@ -31,7 +32,10 @@ class ManageNewsController extends Controller
 		return view("admin.news_add");
 	}
 	function createNews(Request $request){
+		$this->validate($request, News::$rules);
 		$news = new News;
+		$news->create_user = "admin";
+		$news->update_user = "admin";
 		$form = $request->all();
 		unset($form['_token']);
 		$news->fill($form)->save();
