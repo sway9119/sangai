@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 
 @section('content')
+@if (session('status'))
+<div class="alert alert-success" role="alert" onclick="this.classList.add('hidden')">
+	{{ session('status') }}
+</div>
+@endif
 <div class="container">
 	<div class="card">
 		<div class="card-header">News一覧</div>

@@ -39,7 +39,8 @@ class ManageNewsController extends Controller
 		$form = $request->all();
 		unset($form['_token']);
 		$news->fill($form)->save();
-		return redirect('/home');
+		return redirect()->route('news_list')->with('status', '新規作成が完了しました。');
+
 	}
 	function deleteNews($id){
 		News::where('id', $id)->delete();

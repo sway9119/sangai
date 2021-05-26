@@ -19,11 +19,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['middleware' => ['auth.admin']], function () {
 	
 	//管理側トップ
-	Route::get('/admin', 'App\Http\Controllers\admin\AdminTopController@show');
+	Route::get('/admin', 'App\Http\Controllers\admin\AdminTopController@show')->name('admin_top');
 	//ログアウト実行
 	Route::post('/admin/logout', 'App\Http\Controllers\admin\AdminLogoutController@logout');
     //News一覧
-	Route::get('/admin/news_list', 'App\Http\Controllers\admin\ManageNewsController@showNewsList');
+	Route::get('/admin/news_list', 'App\Http\Controllers\admin\ManageNewsController@showNewsList')->name('news_list');
 	//News追加
 	Route::get('/admin/news_add', 'App\Http\Controllers\admin\ManageNewsController@addNews');
 	//News作成
