@@ -45,8 +45,6 @@ class ManageNewsController extends Controller
 	function deleteNews($id){
 		News::where('id', $id)->delete();
 		$news_list = News::orderBy("id", "desc")->paginate(10);
-		return view("admin.news_list", [
-			"news_list" => $news_list
-		]);
+		return redirect()->route('news_list', ['news_list' => $news_list])->with('status', '削除が完了しました。');
 	}
 }

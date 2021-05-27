@@ -18,7 +18,7 @@
 					</a>
 					<div class="text-right">
 						<a href="{{ url('admin/news_edit/' . $new->id) }}" class="btn btn-info">編集</a>
-						<a href="{{ url('admin/news_delete/' . $new->id) }}" class="btn btn-info">削除</a>
+						<a href="{{ url('admin/news_delete/' . $new->id) }}" class="btn btn-info" onClick="delete_alert(event);return false;">削除</a>
 					</div>
 				</li>
 				@endforeach
