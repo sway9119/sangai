@@ -8,6 +8,7 @@
 @endif
 <div class="container">
 	<div class="card">
+		<a href="{{ url('admin/news_add/') }}" class="btn btn-primary">新規作成</a>
 		<div class="card-header">News一覧</div>
 		<div class="card-body">
 			<ul class="list-group">
@@ -23,11 +24,10 @@
 				</li>
 				@endforeach
 			</ul>
-			<div class="mt-3">
-				{{ $news_list->links() }}
-			</div>
 		</div>
-		<a href="{{ url('admin/news_add/') }}" class="btn btn-primary">新規作成</a>
+	</div>
+	<div class="mt-3">
+		{{ $news_list->links() }}
 	</div>
 </div>
 @endsection​
