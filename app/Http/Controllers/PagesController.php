@@ -6,10 +6,16 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function about() {
+    public function top()
+    {
+        return view('pages.top');
+    }
+    public function about()
+    {
         return view('pages.about');
     }
-    public function shop() {
+    public function shop()
+    {
         return view('pages.shop');
     }
 }
