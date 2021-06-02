@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'App\Http\Controllers\PagesController@top');
 Route::get('collections', 'App\Http\Controllers\CollectionsController@index');
 Route::get('shop', 'App\Http\Controllers\PagesController@shop');
 Route::get('about', 'App\Http\Controllers\PagesController@about');
@@ -17,12 +15,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //管理側
 Route::group(['middleware' => ['auth.admin']], function () {
-	
+
 	//管理側トップ
 	Route::get('/admin', 'App\Http\Controllers\admin\AdminTopController@show')->name('admin_top');
 	//ログアウト実行
 	Route::post('/admin/logout', 'App\Http\Controllers\admin\AdminLogoutController@logout');
-    //News一覧
+	//News一覧
 	Route::get('/admin/news_list', 'App\Http\Controllers\admin\ManageNewsController@showNewsList')->name('news_list');
 	//News追加
 	Route::get('/admin/news_add', 'App\Http\Controllers\admin\ManageNewsController@addNews');
@@ -36,7 +34,6 @@ Route::group(['middleware' => ['auth.admin']], function () {
 	Route::post('/admin/news_update/{id}', 'App\Http\Controllers\admin\ManageNewsController@updateNewsDetail')->name('news_update');
 	//News削除
 	Route::get('/admin/news_delete/{id}', 'App\Http\Controllers\admin\ManageNewsController@deleteNews');
-
 });
 
 //管理側ログイン

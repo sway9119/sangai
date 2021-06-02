@@ -5,9 +5,9 @@
 <div>
 	<ul>
 		@foreach ($errors->all() as $error)
-			<li>{{ $error }}</li>
+		<li>{{ $error }}</li>
 		@endforeach
-	</li>
+	</ul>
 </div>
 @endif
 <form method="post" action="/admin/news_update/{{ $news->id }}">
@@ -20,9 +20,9 @@
 						<div class="col-md-8">
 							<div class="card-body">
 								<imput type="hidden" name="id" value="{{$news->id}}">
-								<h5><input class="col-md-12" name="title" placeholder="タイトル" value="{{ $news->title }}"></h5>
-								<textarea class="col-md-12" rows=4" cols="40" name="message" placeholder="内容" >{{ $news->message }}</textarea>
-								<p class="card-text"><small class="text-muted">created at {{ optional($news->created_at)->format('Y/m/d') ?: '' }}</small></p>
+									<h5><input class="col-md-12" name="title" placeholder="タイトル" value="{{ $news->title }}"></h5>
+									<textarea class="col-md-12" rows=4" cols="40" name="message" placeholder="内容">{{ $news->message }}</textarea>
+									<p class="card-text"><small class="text-muted">created at {{ optional($news->created_at)->format('Y/m/d') ?: '' }}</small></p>
 							</div>
 						</div>
 						<div class="col-md-4">

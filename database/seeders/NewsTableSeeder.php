@@ -35,6 +35,5 @@ class NewsTableSeeder extends Seeder
             'updated_at' => '2020/1/2'
         ];
         DB::table('news')->insert($param);
-
     }
 }
