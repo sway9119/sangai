@@ -20,7 +20,7 @@
                 <ul class="nav_list">
                     <li class="nav_list_content"><a href="/about" class="a_default">ABOUT</a></li>
                     <li class="nav_list_content"><a href="/news" class="a_default">NEWS</a></li>
-                    <li class="nav_list_content"><a href="/collection" class="a_default">COLLECTION</a></li>
+                    <li class="nav_list_content"><a href="/collections" class="a_default">COLLECTION</a></li>
                     <li class="nav_list_content"><a href="/bridal" class="a_default">BRIDAL</a></li>
                     <li class="nav_list_content"><a href="/shop" class="a_default">SHOP</a></li>
                     <li class="nav_list_content"><a href="/contact" class="a_default">CONTACT</a></li>
