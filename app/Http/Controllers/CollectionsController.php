@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 class CollectionsController extends Controller
 {
-    public function index() {
+    public function index()
+    {
+
         return view('collections.index');
     }
 }
