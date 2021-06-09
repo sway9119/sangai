@@ -7,7 +7,7 @@
 		<li class="news_list">
 			<div class="news_text">
 				<div class="news_content">
-					<h3>{{ $items->name }}</h3>
+					<h3>{{ $item->name }}</h3>
 					<span class="news_date">{{ $item->created_at }}</span>
 					<div>{{ $item->price }}</div>
 					<div class="news_img_box"></div>
