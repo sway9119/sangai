@@ -12,4 +12,9 @@ class CollectionsController extends Controller
         $items_list = Item::orderBy("id", "desc")->paginate(10);
         return view('collections.index', ['items_list' => $items_list]);
     }
+    public function list()
+    {
+        $items_list = Item::where('page_number', '1')->get();
+        return view('collections.list', ['items_list' => $items_list]);
+    }
 }
