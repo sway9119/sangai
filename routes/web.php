@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'App\Http\Controllers\PagesController@top');
 Route::get('collections', 'App\Http\Controllers\CollectionsController@index');
-Route::get('collections/1', 'App\Http\Controllers\CollectionsController@list');
+Route::get('collections/{page_number}', 'App\Http\Controllers\CollectionsController@list');
 Route::get('shop', 'App\Http\Controllers\PagesController@shop');
 Route::get('about', 'App\Http\Controllers\PagesController@about');
 Route::get('news', 'App\Http\Controllers\NewsController@index');
