@@ -6,8 +6,7 @@
         <ul class="default_list collection_box js_light_box">
             @foreach ($items_list as $item)
             <li class="collection_list">
-                {{ $item->name }}
-                <img src="" data_detail="[' . $item->name . '] ' . $item->price . '" class="collection">
+                <img src="{{ asset('img/collections/ring1.jpeg')}}" data_detail="[' . $item->name . '] ' . $item->price . '" class="collection">
             </li>
             @endforeach
         </ul>
