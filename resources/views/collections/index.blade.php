@@ -1,7 +1,7 @@
 @extends('layouts.page')
 
 @section('main')
-<div class="res_disp_main page_1">
+<div class="res_disp_main">
 	<div class="l_center l_collection">
 		<ul class="default_list">
 			<li class="list_item"><a href="/collections/1" class="a_default">1</a></li>

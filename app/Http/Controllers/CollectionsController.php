@@ -15,6 +15,6 @@ class CollectionsController extends Controller
     public function list($page_number)
     {
         $items_list = Item::where('page_number', $page_number)->get();
-        return view('collections.list', ['items_list' => $items_list]);
+        return view('collections.list', ['items_list' => $items_list, 'page_number' => $page_number]);
     }
 }
