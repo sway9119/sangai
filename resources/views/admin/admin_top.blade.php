@@ -10,7 +10,7 @@
 					<a href="{{ url('admin/news_list') }}" class="btn btn-primary">News一覧</a>
 				</li>
 				<li class="my-2">
-					<a href="{{ url('admin/colection_list') }}" class="btn btn-primary">Colection一覧</a>
+					<a href="{{ url('admin/collections_list') }}" class="btn btn-primary">Colection一覧</a>
 				</li>
 				<li class="my-2">
 					<form method="post" action="{{ url('admin/logout') }}">

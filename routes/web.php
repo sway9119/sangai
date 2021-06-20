@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth.admin']], function () {
 	Route::post('/admin/news_update/{id}', 'App\Http\Controllers\admin\ManageNewsController@updateNewsDetail')->name('news_update');
 	//News削除
 	Route::get('/admin/news_delete/{id}', 'App\Http\Controllers\admin\ManageNewsController@deleteNews');
+	//Collections一覧
+	Route::get('/admin/collections_list', 'App\Http\Controllers\admin\ManageCollectionsController@showCollectionsList')->name('collections_list');
 });
 
 //管理側ログイン
