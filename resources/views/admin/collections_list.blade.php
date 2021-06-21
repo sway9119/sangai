@@ -8,7 +8,7 @@
 @endif
 <div class="container">
     <div class="card">
-        <a href="{{ url('admin/collections_add/') }}" class="btn btn-primary">新規作成</a>
+        <a href="{{ url('admin/collection_add/') }}" class="btn btn-primary">新規作成</a>
         <div class="card-header">Collections一覧</div>
         <div class="card-body">
             <ul class="list-group">
@@ -18,8 +18,8 @@
                         {{ $item->name }}
                     </a>
                     <div class="text-right">
-                        <a href="{{ url('admin/collections_edit/' . $item->id) }}" class="btn btn-info">編集</a>
-                        <a href="{{ url('admin/collections_delete/' . $item->id) }}" class="btn btn-info" onClick="delete_alert(event);return false;">削除</a>
+                        <a href="{{ url('admin/collection_edit/' . $item->id) }}" class="btn btn-info">編集</a>
+                        <a href="{{ url('admin/collection_delete/' . $item->id) }}" class="btn btn-info" onClick="delete_alert(event);return false;">削除</a>
                     </div>
                 </li>
                 @endforeach

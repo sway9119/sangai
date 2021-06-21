@@ -13,4 +13,9 @@ class ManageCollectionsController extends Controller
         $items_list = Item::orderBy("id", "desc")->paginate(10);
         return view("admin.collections_list", ["items_list" => $items_list]);
     }
+    function editCollectionDetail($id)
+    {
+        $item = Item::find($id);
+        return view("admin.collection_edit", ['item' => $item]);
+    }
 }
