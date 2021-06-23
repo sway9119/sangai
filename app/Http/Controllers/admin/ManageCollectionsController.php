@@ -18,4 +18,14 @@ class ManageCollectionsController extends Controller
         $item = Item::find($id);
         return view("admin.collection_edit", ['item' => $item]);
     }
+    function updateCollectionDetail(Request $request)
+    {
+        $collection = Item::findOrFail($request->id);
+        $collection->name = $request->input('name');
+        $collection->price = $request->input('price');
+        $collection->img = $request->input('img');
+        $collection->discription = $request->input('discription');
+        $collection->save();
+        return redirect()->route('collection_detail', ['id' => $collection->id, 'collection' => $collection])->with('status', '編集が完了しました。');
+    }
 }

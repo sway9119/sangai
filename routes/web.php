@@ -37,8 +37,10 @@ Route::group(['middleware' => ['auth.admin']], function () {
 	Route::get('/admin/news_delete/{id}', 'App\Http\Controllers\admin\ManageNewsController@deleteNews');
 	//Collections一覧
 	Route::get('/admin/collections_list', 'App\Http\Controllers\admin\ManageCollectionsController@showCollectionsList')->name('collections_list');
-	//Collections編集
+	//Collection編集
 	Route::get('/admin/collection_edit/{id}', 'App\Http\Controllers\admin\ManageCollectionsController@editCollectionDetail');
+	//Collection更新
+	Route::post('/admin/collection_update/{id}', 'App\Http\Controllers\admin\ManageCollectionsController@updateCollectionDetail')->name('collection_update');
 });
 
 //管理側ログイン
