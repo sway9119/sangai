@@ -13,6 +13,11 @@ class ManageCollectionsController extends Controller
         $items_list = Item::orderBy("id", "desc")->paginate(10);
         return view("admin.collections_list", ["items_list" => $items_list]);
     }
+    function showCollectionDetail($id)
+    {
+        $item = Item::find($id);
+        return view("admin.collection_detail", ["item" => $item]);
+    }
     function editCollectionDetail($id)
     {
         $item = Item::find($id);
@@ -20,12 +25,12 @@ class ManageCollectionsController extends Controller
     }
     function updateCollectionDetail(Request $request)
     {
-        $collection = Item::findOrFail($request->id);
-        $collection->name = $request->input('name');
-        $collection->price = $request->input('price');
-        $collection->img = $request->input('img');
-        $collection->discription = $request->input('discription');
-        $collection->save();
-        return redirect()->route('collection_detail', ['id' => $collection->id, 'collection' => $collection])->with('status', '編集が完了しました。');
+        $item = Item::findOrFail($request->id);
+        $item->name = $request->input('name');
+        $item->price = $request->input('price');
+        $item->img = $request->input('img');
+        $item->discription = $request->input('discription');
+        $item->save();
+        return redirect()->route('collection_detail', ['id' => $item->id, 'item' => $item])->with('status', '編集が完了しました。');
     }
 }
