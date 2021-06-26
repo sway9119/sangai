@@ -33,4 +33,10 @@ class ManageCollectionsController extends Controller
         $item->save();
         return redirect()->route('collection_detail', ['id' => $item->id, 'item' => $item])->with('status', '編集が完了しました。');
     }
+    function deleteCollection($id)
+    {
+        Item::where('id', $id)->delete();
+        $item = Item::orderBy("id", "desc")->paginate(10);
+        return redirect()->route('collections_list', ['item' => $item])->with('status', '削除が完了しました。');
+    }
 }
