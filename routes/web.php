@@ -43,6 +43,8 @@ Route::group(['middleware' => ['auth.admin']], function () {
 	Route::get('/admin/collection_edit/{id}', 'App\Http\Controllers\admin\ManageCollectionsController@editCollectionDetail');
 	//Collection更新
 	Route::post('/admin/collection_update/{id}', 'App\Http\Controllers\admin\ManageCollectionsController@updateCollectionDetail')->name('collection_update');
+	//News削除
+	Route::get('/admin/collection_delete/{id}', 'App\Http\Controllers\admin\ManageCollectionsController@deleteCollection');
 });
 
 //管理側ログイン
