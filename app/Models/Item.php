@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Item extends Model
 {
     use HasFactory;
+
+    protected $guarded = array('id');
+
+    public static $rules = array(
+        'name' => 'required',
+        'price' => 'required',
+        'page_number' => 'required'
+    );
 }

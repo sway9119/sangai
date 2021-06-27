@@ -33,6 +33,19 @@ class ManageCollectionsController extends Controller
         $item->save();
         return redirect()->route('collection_detail', ['id' => $item->id, 'item' => $item])->with('status', '編集が完了しました。');
     }
+    function addCollection()
+    {
+        return view("admin.collection_add");
+    }
+    function createCollection(Request $request)
+    {
+        $this->validate($request, Item::$rules);
+        $item = new Item;
+        $form = $request->all();
+        unset($form['_token']);
+        $item->fill($form)->save();
+        return redirect()->route('collections_list')->with('status', '新規作成が完了しました。');
+    }
     function deleteCollection($id)
     {
         Item::where('id', $id)->delete();

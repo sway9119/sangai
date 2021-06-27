@@ -20,7 +20,7 @@
 						<div class="col-md-8">
 							<div class="card-body">
 								<h5><input class="col-md-12" name="title" placeholder="タイトル"></h5>
-								<textarea class="col-md-12" rows=4" cols="40" name="message" placeholder="内容"></textarea>
+								<textarea class="col-md-12" rows="4" cols="40" name="message" placeholder="内容"></textarea>
 								<input class="col-md-12" name="img" placeholder="画像のURL">
 								<p class="card-text"><small class="text-muted">created at </small></p>
 							</div>
