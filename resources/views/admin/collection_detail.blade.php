@@ -19,7 +19,11 @@
                         </div>
                     </div>
                     <div class="col-md-6">
+                        @if ($item->img == null)
+                        <img src="{{ asset('img/dummy.jpeg')}}" alt="...">
+                        @else
                         <img src="{{ asset($item->img)}}" alt="...">
+                        @endif
                     </div>
                 </div>
             </div>
