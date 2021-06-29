@@ -29,7 +29,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card-body">
-                                <p><input class="col-md-12" name="img" placeholder="画像のパス"></p>
+                                <p><input class="col-md-12" name="img" placeholder="画像のパス" default=""></p>
                                 <p><input class="col-md-12" type="number" name="page_number" placeholder="ページ番号"></p>
                                 <p><input class="col-md-12" name="tag" placeholder="タグ"></p>
                             </div>
